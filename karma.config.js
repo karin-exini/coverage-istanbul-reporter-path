@@ -7,8 +7,6 @@ module.exports = function (config) {
         frameworks: ['jasmine'],
 
         files: [
-            {pattern: './node_modules/jquery/dist/jquery.js', watched: false},
-            {pattern: './node_modules/materialize-css/dist/js/materialize.js', watched: false},
             {pattern: './karma-test-shim.js', watched: false}
         ],
 

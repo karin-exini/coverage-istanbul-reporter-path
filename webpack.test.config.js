@@ -7,11 +7,7 @@ module.exports = {
     resolve: {
         root: path.resolve(__dirname, 'client'),
         modulesDirectories: ['node_modules'],
-        extensions: ['', '.ts', '.js', '.json', '.css', '.html'],
-        alias: {
-            materializecss: path.resolve(__dirname, 'node_modules/materialize-css/dist/css/materialize.css'),
-            materialize: path.resolve(__dirname, 'node_modules/materialize-css/dist/js/materialize.js')
-        }
+        extensions: ['', '.ts', '.js', '.json', '.css', '.html']
     },
 
     module: {
@@ -34,19 +30,6 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: 'skip'
-            },
-            {
-                test: /materialize-css\/dist\/js\/materialize\.js/,
-                loader: 'imports?materializecss'
-            },
-            {
-                test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
-                loader: 'null'
-            },
-            {
-                test: /.(png|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
-                loader: 'null',
-                exclude: /node_modules/
             },
             {
                 test: /\.html$/,
