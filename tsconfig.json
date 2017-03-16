@@ -1,0 +1,38 @@
+{
+  /* the configuration of the typescript compiler. See docs https://github.com/Microsoft/TypeScript/wiki/Compiler-Options
+  The settings outDir and rootDir are managed by sbt-typescript.
+  */
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmit": true,
+    /* the following two settings are required for angular2 annotations to work*/
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators":true,
+    /* for reading your ts source while debugging from a browser */
+    "sourceMap": true,
+    "baseUrl": "./client",
+    /* noImplicitAny when you want your typescript to be fully typed */
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": ["es6", "dom"]
+  },
+  "files": [
+    "client/bootstrap/polyfills",
+    "client/bootstrap/vendors",
+    "client/bootstrap/main"
+  ],
+  "exclude": [
+	"node_modules",
+    "project/target"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true,
+    "useWebpackText": true
+  }
+}
